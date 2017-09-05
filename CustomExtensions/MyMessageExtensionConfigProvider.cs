@@ -12,11 +12,11 @@ using System.Threading.Tasks;
 
 namespace CustomExtensions
 {
-    public class MyMessageBindingProvider : IExtensionConfigProvider
+    public class MyMessageExtensionConfigProvider : IExtensionConfigProvider
     {
         public void Initialize(ExtensionConfigContext context)
         {
-            context.Trace.Info("In MyMessageBindingProvider.Initialize");
+            context.Trace.Info($"In {nameof(MyMessageExtensionConfigProvider)}.{nameof(Initialize)}");
 
             context.AddConverter<string, MyMessage>(s =>
                 new MyMessage { Name = "Custom-binding (string): " + s }
