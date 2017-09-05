@@ -12,16 +12,18 @@ using System.Threading.Tasks;
 
 namespace CustomExtensions
 {
-    public class TestBindingProvider : IExtensionConfigProvider
+    public class MyMessageBindingProvider : IExtensionConfigProvider
     {
         public void Initialize(ExtensionConfigContext context)
         {
-            context.AddConverter<string, Test>(s =>
-                new Test { Name = "Custom-binding (string): " + s }
+            context.Trace.Info("In MyMessageBindingProvider.Initialize");
+
+            context.AddConverter<string, MyMessage>(s =>
+                new MyMessage { Name = "Custom-binding (string): " + s }
             );
 
-            context.AddConverter<EventData, Test>(s =>
-                    new Test { Name = "Custom-binding (EventData): " + s.Body }
+            context.AddConverter<EventData, MyMessage>(s =>
+                    new MyMessage { Name = "Custom-binding (EventData): " + s.Body }
             );
         }
     }

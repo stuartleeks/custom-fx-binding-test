@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomExtensions
 {
-    public class Test
+    public class MyMessage
     {
         public string Name { get; set; }
         public int Value { get; set; }

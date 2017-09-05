@@ -15,7 +15,7 @@ namespace function_app
         //    log.Info($"C# Event Hub trigger function processed a message: {myEventHubMessage}");
         //}
         [FunctionName("function_one")]
-        public static void Run([EventHubTrigger("custombindings ", Connection = "custombindings_RootManageSharedAccessKey_EVENTHUB")]Test myEventHubMessage, TraceWriter log)
+        public static void Run([EventHubTrigger("custombindings ", Connection = "custombindings_RootManageSharedAccessKey_EVENTHUB")]MyMessage myEventHubMessage, TraceWriter log)
         {
             log.Info($"C# Event Hub trigger function processed a message: '{myEventHubMessage.Name}', Value: {myEventHubMessage.Value}");
         }
