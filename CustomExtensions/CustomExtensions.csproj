@@ -131,8 +131,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TestBindingProvider.cs" />
-    <Compile Include="Test.cs" />
+    <Compile Include="MyMessageExtensionConfigProvider.cs" />
+    <Compile Include="MyMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
