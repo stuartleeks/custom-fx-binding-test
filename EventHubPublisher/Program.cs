@@ -36,7 +36,8 @@ namespace EventHubPublisher
             {
                 try
                 {
-                    var message = "{'Name':'Message " + dateTimeString + "', 'Value': " + i + "}";
+                    //var message = "{'Name':'Message " + dateTimeString + "', 'Value': " + i + "}";
+                    var message = $"{dateTimeString},{i}";
                     Console.WriteLine($"Sending message: {message}");
                     await eventHubClient.SendAsync(new EventData(Encoding.UTF8.GetBytes(message)));
                 }
